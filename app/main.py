@@ -1,7 +1,5 @@
-from auth import auth
-from categories import category
+from routes import auth, category, products
 from fastapi import FastAPI
-from products import products
 
 app = FastAPI()
 
