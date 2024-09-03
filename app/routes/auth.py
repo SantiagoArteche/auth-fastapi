@@ -14,12 +14,12 @@ crypt = CryptContext(schemes=["bcrypt"])
 
 @router.post('/')
 async def create_user(user: User):
-    newUser = await User.create(user)
+    new_user = await User.create(user)
 
-    if not newUser:
+    if not new_user:
         raise HTTPException(400, 'user already exists by that email or username')
     
-    return newUser
+    return new_user
 
 @router.post('/login')
 async def login(form: OAuth2PasswordRequestForm = Depends()):
